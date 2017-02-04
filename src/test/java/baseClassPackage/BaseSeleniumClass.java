@@ -34,7 +34,7 @@ public class BaseSeleniumClass {
 
     @AfterSuite
     public void afterSuite() { System.out.println("After suite");
-//        driver.quit();
+        driver.quit();
     }
 
     @AfterClass
