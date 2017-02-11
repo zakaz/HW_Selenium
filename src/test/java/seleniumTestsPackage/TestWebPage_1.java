@@ -6,6 +6,8 @@ import baseClassPackage.BaseSeleniumClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -60,7 +62,7 @@ public class TestWebPage_1 extends BaseSeleniumClass {
     }
 
     @Test(dependsOnMethods = "enterTheMail", dataProviderClass = DataProviderClass.class, dataProvider = "writeTheLetter")
-    public void createNewMail(String mailAdress, String letterBody) {
+    public void createNewMail(String mailAdress, String letterBody) throws InterruptedException {
         logger = Logger.getLogger("Test-3. Create new mail");
         driver.findElement(By.linkText("Написать")).click();
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"nb-20\"]")));

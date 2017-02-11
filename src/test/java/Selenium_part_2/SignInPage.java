@@ -28,13 +28,16 @@ public class SignInPage extends YaMailAbstract {
     public InboxMailPage loginToYaMail(String login, String password) {
 
         System.out.println("Typing user login: " + login);
+        highlightElement(driver, loginInput);
         loginInput.clear();
         loginInput.sendKeys(login);
 
         System.out.println("Typing user password: " + password);
+        highlightElement(driver, pwdInput);
         pwdInput.clear();
         pwdInput.sendKeys(password);
 
+        highlightElement(driver, signInBtn);
         signInBtn.click();
         System.out.println("Login is in progress...");
 

@@ -1,5 +1,6 @@
 package Selenium_part_2;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,10 +30,15 @@ public class EnterDetailsOfNewLetter extends YaMailAbstract{
     }
 
     public PopUpWarningWindow enterDetailsOfTheLetter(String address, String subject, String textOfMail){
+        JavascriptExecutor executor = ((JavascriptExecutor) driver);
+
         addressForSending.sendKeys(address);
         subjectForLetter.sendKeys(subject);
         textForLetter.sendKeys(textOfMail);
-        closeButton.click();
+//        closeButton.click();
+        executor.executeScript("arguments[0].click();", closeButton);
+
+
 
         return new  PopUpWarningWindow(driver);
     }

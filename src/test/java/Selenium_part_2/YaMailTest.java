@@ -1,8 +1,12 @@
 package Selenium_part_2;
 
+import capabilities.GetDriverCapabilities;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -27,8 +31,12 @@ public class YaMailTest {
     @BeforeClass(description = "Start browser")
     public void startBrowser() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\zakir_mustafin@epam.com\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe");
-        driver = new ChromeDriver();
+        driver = GetDriverCapabilities.getDriver();
+//        driver = new ChromeDriver();
         driver.get(START_URL);
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='submit']")));
+
         String expectedTitle = "Яндекс.Почта — бесплатная электронная почта";
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, expectedTitle);
@@ -51,7 +59,7 @@ public class YaMailTest {
     }
 
     @Test(dependsOnMethods = "loginToYaMail", description = "Create new Letter")
-    public void createNewLetter() {
+    public void createNewLetter() throws InterruptedException {
         // Login via user-defined method
         new InboxMailPage(driver).createNewMail();
 
