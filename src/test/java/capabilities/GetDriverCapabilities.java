@@ -3,6 +3,7 @@ package capabilities;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -33,7 +34,11 @@ public class GetDriverCapabilities {
 //
 //		 System.setProperty("webdriver.gecko.driver", "C:\\Data\\For_grid\\geckodriver.exe");
 //		 DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-//
+
+//        FirefoxProfile profile = new FirefoxProfile();
+//        profile.setEnableNativeEvents(true);
+//        FirefoxDriver driver = new FirefoxDriver(profile);
+
         System.setProperty("webdriver.chrome.driver", "C:\\Data\\For_grid\\chromedriver.exe");
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 
