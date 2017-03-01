@@ -15,8 +15,21 @@
             </class>
         </classes>
     </test>
-
-
-
-
 </suite>
+
+<!--Не нравится мне этот xml-->
+<!--Чтоб запустить все тесты достаточно-->
+<!-- ?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="All">
+    <listeners>
+        <listener class-name="...TestListener" />
+    </listeners>
+
+        <test name="All">
+            <packages>
+                <package name="framework.*"/>
+            </packages>
+        </test>
+
+</suite-->

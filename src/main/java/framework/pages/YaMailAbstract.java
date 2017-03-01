@@ -1,18 +1,16 @@
-package framework;
+package framework.pages;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.Set;
 
 /**
  * Created by Zakir_Mustafin on 2/3/2017.
  */
+//Что за класс? почему абстрактный и не объявлен абстактным, кто наследует?
 public class YaMailAbstract {
     protected WebDriver driver;
     protected Logger logger;

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
  */
 public class PopUpWarningWindow extends YaMailAbstract{
 
-    @FindBy(xpath = "//button[@data-action='save']")
+    @FindBy(xpath = "//button[@framework.data-action='save']")
     WebElement saveButtonExsist;
 
     public PopUpWarningWindow(WebDriver driver) {

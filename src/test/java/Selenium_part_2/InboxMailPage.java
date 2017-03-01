@@ -26,7 +26,7 @@ public class InboxMailPage extends YaMailAbstract{
     @FindBy (xpath = "//span[text()='просто_папка']")
     WebElement droppable;
 
-    @FindBy (xpath = "//div[@data-params='source=toolbar'][19]")
+    @FindBy (xpath = "//div[@framework.data-params='source=toolbar'][19]")
     WebElement elementForContexClick;
 
     public InboxMailPage(WebDriver driver){

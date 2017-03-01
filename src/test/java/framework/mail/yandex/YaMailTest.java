@@ -1,6 +1,5 @@
-package framework;
+package framework.mail.yandex;
 
-import capabilities.GetDriverCapabilities;
 import framework.data.LetterParams;
 import framework.data.User;
 import framework.pages.*;
@@ -23,6 +22,7 @@ public class YaMailTest {
 
     @BeforeClass(description = "Start browser")
     public void startBrowser() {
+        //хардкод
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\zakir_mustafin@epam.com\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe");
         driver = framework.browser_capabilities.GetDriverCapabilities.getDriver();
 //        driver = new ChromeDriver();
@@ -32,9 +32,11 @@ public class YaMailTest {
 
         String expectedTitle = "Яндекс.Почта — бесплатная электронная почта";
         String actualTitle = driver.getTitle();
+        //это тест? тогда нужно убрать бифорекласс
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
+    //бифор класс обычно один, можно убрать в родительский класс
     @BeforeClass(dependsOnMethods = "startBrowser", description = "Add implicit wait and maximize window")
     public void addImplicitly() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
