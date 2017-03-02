@@ -5,11 +5,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by Zakir_Mustafin on 2/3/2017.
  */
+
+//Такой же класс как и во фреймворке
 public class YaMailAbstract {
     protected WebDriver driver;
 //    protected WebDriverWait wait;

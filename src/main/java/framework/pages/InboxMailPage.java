@@ -27,7 +27,7 @@ public class InboxMailPage extends YaMailAbstract {
     @FindBy (xpath = "//span[text()='просто_папка']")
     WebElement droppable;
 
-    @FindBy (xpath = "//div[@data-params='source=toolbar'][19]")
+    @FindBy (xpath = "//div[@framework.data-params='source=toolbar'][19]")
     WebElement elementForContexClick;
 
     public InboxMailPage(WebDriver driver, Logger logger){
@@ -48,6 +48,7 @@ public class InboxMailPage extends YaMailAbstract {
                 .build();
         dragAndDrop.perform();
 
+        //Для чего здесь слип?, может подождать когда элемент станет кликебл, опять же хардкод, убираем все константы
         Thread.sleep(3000);
         builder.contextClick(elementForContexClick).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
         Thread.sleep(5000);

@@ -34,7 +34,7 @@ public class CreateNewMailPage extends YaMailAbstract {
     @FindBy(xpath = "//*[@title=\"Закрыть\"]")
     WebElement closeButton;
 
-    @FindBy(xpath = "//button[@data-action='save']")
+    @FindBy(xpath = "//button[@framework.data-action='save']")
     WebElement saveButtonExsist;
 
     @FindBy(xpath = "//span[text()='Черновики']")

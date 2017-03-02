@@ -2,8 +2,6 @@ package capabilities;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -12,7 +10,8 @@ import java.net.URL;
 
 /**
  * Created by Zakir_Mustafin on 2/11/2017.
- */
+ *///
+    //такой класс уже есть, убрать
 public class GetDriverCapabilities {
     private static WebDriver driver;
 
